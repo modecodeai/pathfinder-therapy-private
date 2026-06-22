@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pathfinder Therapy">
+  <rect width="64" height="64" rx="14" fill="#18231f"/>
+  <path d="M18 45c10-2 12-14 19-16 5-1 8 2 9 7" fill="none" stroke="#efe7dc" stroke-width="4" stroke-linecap="round"/>
+  <path d="M22 19c6 4 11 5 20 3" fill="none" stroke="#b48364" stroke-width="4" stroke-linecap="round"/>
+</svg>

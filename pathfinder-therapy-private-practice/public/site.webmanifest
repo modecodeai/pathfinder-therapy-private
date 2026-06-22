@@ -1,0 +1,14 @@
+{
+  "name": "Pathfinder Therapy",
+  "short_name": "Pathfinder",
+  "icons": [
+    {
+      "src": "/favicons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#18231f",
+  "background_color": "#f8f4ee",
+  "display": "standalone"
+}
