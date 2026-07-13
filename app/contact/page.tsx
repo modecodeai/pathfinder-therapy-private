@@ -20,6 +20,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Book a consultation."
         description="Tell Pathfinder Therapy a little about what you are looking for. This form is prepared for secure integration with your preferred enquiry workflow."
+        showPrimaryCta={false}
       />
       <section className="bg-linen py-16 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
