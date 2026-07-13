@@ -7,6 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["/", ...Object.keys(pageSummaries)];
 
   return routes.map((route) => ({
-    url: new URL(route, site.url).toString()
+    url: route === "/" ? `${site.url}/` : `${site.url}${route}/`
   }));
 }
