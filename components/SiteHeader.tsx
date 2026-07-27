@@ -63,7 +63,11 @@ export function SiteHeader() {
       </Container>
 
       {open ? (
-        <div id="mobile-navigation" className="border-t border-ink/10 bg-linen lg:hidden">
+        <nav
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          className="border-t border-ink/10 bg-linen lg:hidden"
+        >
           <Container className="grid gap-3 py-5">
             {navigation.map((item) => {
               const active = pathname === item.href || pathname === `${item.href}/`;
@@ -83,7 +87,7 @@ export function SiteHeader() {
               {site.bookingLabel}
             </ButtonLink>
           </Container>
-        </div>
+        </nav>
       ) : null}
     </header>
   );
