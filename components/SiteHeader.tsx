@@ -30,11 +30,12 @@ export function SiteHeader() {
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
           {navigation.map((item) => {
-            const active = pathname === item.href;
+            const active = pathname === item.href || pathname === `${item.href}/`;
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={`text-sm font-medium transition ${
                   active ? "text-ink" : "text-ink/64 hover:text-ink"
                 }`}
@@ -54,6 +55,7 @@ export function SiteHeader() {
           className="grid h-11 w-11 place-items-center rounded-full border border-ink/15 bg-white/70 text-ink lg:hidden"
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           onClick={() => setOpen((value) => !value)}
         >
           {open ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
@@ -61,23 +63,31 @@ export function SiteHeader() {
       </Container>
 
       {open ? (
-        <div className="border-t border-ink/10 bg-linen lg:hidden">
+        <nav
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          className="border-t border-ink/10 bg-linen lg:hidden"
+        >
           <Container className="grid gap-3 py-5">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-full px-2 py-3 text-base font-medium text-ink"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const active = pathname === item.href || pathname === `${item.href}/`;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className="rounded-full px-2 py-3 text-base font-medium text-ink"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <ButtonLink href="/contact" className="mt-2" onClick={() => setOpen(false)}>
               {site.bookingLabel}
             </ButtonLink>
           </Container>
-        </div>
+        </nav>
       ) : null}
     </header>
   );
