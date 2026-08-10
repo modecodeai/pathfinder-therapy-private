@@ -6,13 +6,20 @@ type PageHeroProps = {
   eyebrow?: string;
   title: string;
   description: string;
+  showPrimaryCta?: boolean;
   secondaryCta?: {
     href: string;
     label: string;
   };
 };
 
-export function PageHero({ eyebrow, title, description, secondaryCta }: PageHeroProps) {
+export function PageHero({
+  eyebrow,
+  title,
+  description,
+  showPrimaryCta = true,
+  secondaryCta
+}: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-ink/10 bg-linen">
       <div aria-hidden="true" className="contour-lines absolute inset-x-0 top-0 h-full opacity-60" />
@@ -28,7 +35,7 @@ export function PageHero({ eyebrow, title, description, secondaryCta }: PageHero
             {description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact">{site.bookingLabel}</ButtonLink>
+            {showPrimaryCta ? <ButtonLink href="/contact">{site.bookingLabel}</ButtonLink> : null}
             {secondaryCta ? (
               <ButtonLink href={secondaryCta.href} variant="secondary">
                 {secondaryCta.label}

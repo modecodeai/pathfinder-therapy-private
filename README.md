@@ -12,14 +12,14 @@ Premium private-practice website for Pathfinder Therapy at `pathfindertherapy.co
 ## Local development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Production build
 
 ```bash
-npm run build
+pnpm build
 ```
 
 The project uses `output: "export"` in `next.config.ts`, so the generated static site is written to `out/` for Cloudflare Pages.
