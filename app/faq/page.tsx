@@ -29,7 +29,10 @@ export default function FAQPage() {
                 <summary className="cursor-pointer list-none text-lg font-semibold text-ink marker:hidden">
                   <span className="flex items-center justify-between gap-5">
                     {faq.question}
-                    <span className="grid h-8 w-8 flex-none place-items-center rounded-full bg-sand text-ink transition group-open:rotate-45">
+                    <span
+                      aria-hidden="true"
+                      className="grid h-8 w-8 flex-none place-items-center rounded-full bg-sand text-ink transition group-open:rotate-45"
+                    >
                       +
                     </span>
                   </span>
