@@ -8,7 +8,8 @@ type PageMetadata = {
 };
 
 export function createMetadata({ title, description, path }: PageMetadata): Metadata {
-  const url = new URL(path, site.url).toString();
+  const canonicalPath = path === "/" ? path : `${path.replace(/\/+$/, "")}/`;
+  const url = new URL(canonicalPath, site.url).toString();
   const fullTitle = title === site.name ? title : `${title} | ${site.name}`;
 
   return {
